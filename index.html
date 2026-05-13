@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camila Resende · Nutricionista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Caveat:wght@400;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --preto:    #0E0E0B;
+  --branco:   #F7F4EE;
+  --musgo:    #4A5C3A;
+  --musgo-cl: #6B7F56;
+  --musgo-bg: #E8EDDF;
+  --madeira:  #7A5230;
+  --madeira-cl:#A0724A;
+  --madeira-bg:#F0E4D6;
+  --cinza:    #2A2A25;
+  --cinza-cl: #888880;
+}
+html {
+  /* Aumenta o tamanho base para 112.5% (~18px), tornando tudo maior */
+  font-size: 112.5%;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--branco);
+  color: var(--preto);
+  font-family: 'Instrument Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.5;
+}
+
+/* ══ HERO ════════════════════════════ */
+#hero {
+  min-height: 100svh;
+  background: var(--preto);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 32px 60px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,92,58,0.22) 0%, transparent 70%);
+  top: -120px; right: -120px;
+  pointer-events: none;
+}
+#hero::after {
+  content: '';
+  position: absolute;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(122,82,48,0.18) 0%, transparent 70%);
+  bottom: -80px; left: -80px;
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+  color: var(--musgo-cl);
+  margin-bottom: 28px;
+  animation: fadeUp 0.6s ease 0.1s both;
+}
+
+/* FOTO RELICADA */
+.hero-photo-wrap {
+  position: relative;
+  width: 270px;
+  height: 270px;
+  margin: 0 auto 32px;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+
+.hero-photo-frame {
+  width: 330px;
+  height: 330px;
+  border-radius: 44% 56% 52% 48% / 46% 44% 56% 54%;
+  overflow: hidden;
+  border: 3px solid var(--musgo);
+  box-shadow:
+    0 0 0 7px rgba(74,92,58,0.12),
+    0 24px 60px rgba(0,0,0,0.55);
+  position: relative;
+  z-index: 2;
+  animation: morphBlob 9s ease-in-out infinite;
+}
+
+@keyframes morphBlob {
+  0%   { border-radius: 44% 56% 52% 48% / 46% 44% 56% 54%; }
+  33%  { border-radius: 56% 44% 38% 62% / 60% 48% 52% 40%; }
+  66%  { border-radius: 38% 62% 60% 40% / 44% 56% 44% 56%; }
+  100% { border-radius: 44% 56% 52% 48% / 46% 44% 56% 54%; }
+}
+
+.hero-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.photo-tag {
+  position: absolute;
+  font-family: 'Caveat', cursive;
+  color: var(--musgo-cl);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  z-index: 3;
+  pointer-events: none;
+}
+.pt-1 { top: -6px; right: -52px; transform: rotate(12deg); }
+.pt-2 { bottom: 6px; left: -56px; transform: rotate(-9deg); }
+
+.hero-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.2rem, 7.5vw, 4.8rem);
+  font-weight: 900;
+  color: var(--branco);
+  line-height: 1.0;
+  letter-spacing: -1px;
+  margin-bottom: 4px;
+  margin-top: 40px;
+  animation: fadeUp 0.6s ease 0.3s both;
+}
+.hero-title .nome {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-size: 1.15em;
+  display: block;
+  color: var(--branco);
+  letter-spacing: 0px;
+}
+.hero-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--musgo-cl);
+}
+
+.hero-sub {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  color: var(--madeira-cl);
+  margin: 18px 0 40px;
+  animation: fadeUp 0.6s ease 0.4s both;
+}
+
+.btn-agendar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--musgo);
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 16px 36px;
+  border-radius: 100px;
+  transition: all 0.3s;
+  animation: fadeUp 0.6s ease 0.5s both;
+  box-shadow: 0 8px 32px rgba(74,92,58,0.45);
+}
+.btn-agendar:hover {
+  background: var(--musgo-cl);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 16px 44px rgba(74,92,58,0.55);
+}
+.btn-agendar .arr {
+  width: 24px; height: 24px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+}
+/* deletando a animacao do mouse
+.hero-scroll {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  opacity: 0.45;
+  animation: fadeUp 0.6s ease 0.9s both;
+  cursor: default;
+}
+.mouse-icon {
+  width: 26px; height: 40px;
+  border: 2px solid rgba(247,244,238,0.6);
+  border-radius: 13px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+.mouse-wheel {
+  width: 3px; height: 7px;
+  background: var(--branco);
+  border-radius: 3px;
+  animation: mouseScroll 2s ease-in-out infinite;
+}
+@keyframes mouseScroll {
+  0%   { opacity: 1; transform: translateY(0); }
+  60%  { opacity: 0; transform: translateY(8px); }
+  61%  { opacity: 0; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.mouse-legs {
+  width: 1px; height: 18px;
+  background: linear-gradient(to bottom, rgba(247,244,238,0.5), transparent);
+  margin-top: 4px;
+}
+/*
+/* ══ PILARES ═════════════════════════ */
+#pilares {
+  background: var(--branco);
+  padding: 100px 40px;
+}
+
+.s-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.15rem;
+  color: var(--madeira);
+  margin-bottom: 12px;
+}
+.s-tag::before {
+  content: '';
+  width: 28px; height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.s-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--preto);
+  margin-bottom: 10px;
+}
+.s-title em { font-style: italic; font-weight: 300; color: var(--musgo); }
+
+.s-desc {
+  font-size: 15px;
+  color: var(--cinza-cl);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 52px;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.pillar-card {
+  border-radius: 22px;
+  padding: 36px 28px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: default;
+  background: var(--musgo-bg);
+}
+.pillar-card:nth-child(2) { background: var(--madeira-bg); }
+.pillar-card:nth-child(3) { background: var(--preto); }
+
+.pillar-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(0,0,0,0.12); }
+
+.p-num {
+  font-family: 'Fraunces', serif;
+  font-size: 80px;
+  font-weight: 900;
+  position: absolute;
+  top: 12px; right: 18px;
+  line-height: 1;
+  color: rgba(74,92,58,0.09);
+  letter-spacing: -2px;
+}
+.pillar-card:nth-child(2) .p-num { color: rgba(122,82,48,0.09); }
+.pillar-card:nth-child(3) .p-num { color: rgba(255,255,255,0.05); }
+
+.p-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: rgba(74,92,58,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.pillar-card:nth-child(2) .p-icon { background: rgba(122,82,48,0.12); }
+.pillar-card:nth-child(3) .p-icon { background: rgba(255,255,255,0.08); }
+
+.p-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--preto);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.pillar-card:nth-child(3) .p-title { color: var(--branco); }
+
+.p-text { font-size: 13.5px; color: #5a6650; line-height: 1.75; }
+.pillar-card:nth-child(2) .p-text { color: #6e5440; }
+.pillar-card:nth-child(3) .p-text { color: rgba(247,244,238,0.5); }
+
+/* ══ SOBRE MIM ═══════════════════════ */
+#sobre {
+  background: var(--preto);
+  padding: 100px 40px;
+}
+
+.sobre-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sobre-photo-wrap {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.sobre-photo-outer {
+  position: relative;
+  width: 300px;
+}
+
+.sobre-photo-frame {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 110px 110px 70px 70px;
+  overflow: hidden;
+  border: 3px solid rgba(74,92,58,0.55);
+  box-shadow:
+    0 0 0 10px rgba(74,92,58,0.07),
+    0 40px 80px rgba(0,0,0,0.65);
+  position: relative;
+  z-index: 2;
+}
+.sobre-photo-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: saturate(0.85);
+  display: block;
+}
+
+.sobre-sticker {
+  position: absolute;
+  bottom: -18px; right: -22px;
+  z-index: 3;
+  background: var(--musgo);
+  color: var(--branco);
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: 0 8px 30px rgba(74,92,58,0.5);
+}
+.sobre-sticker .big {
+  font-size: 21px;
+  font-weight: 900;
+  display: block;
+}
+
+.sobre-deco {
+  position: absolute;
+  top: 50%; left: -28px;
+  transform: translateY(-50%);
+  width: 2px; height: 55%;
+  background: linear-gradient(to bottom, transparent, var(--musgo), transparent);
+  opacity: 0.35;
+}
+
+.sobre-text .s-tag { color: var(--musgo-cl); }
+.sobre-text .s-tag::before { background: var(--musgo-cl); }
+.sobre-text .s-title { color: var(--branco); }
+.sobre-text .s-title em { color: var(--musgo-cl); }
+
+.sobre-text p {
+  font-size: 15px;
+  color: rgba(247,244,238,0.58);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+
+.creds {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.cred {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13.5px;
+  color: rgba(247,244,238,0.5);
+}
+.cred-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--musgo);
+  flex-shrink: 0;
+}
+
+/* ══ METODOLOGIA ═════════════════════ */
+#metodologia {
+  background: var(--madeira-bg);
+  padding: 100px 40px;
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  margin-top: 52px;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.mstep {
+  background: var(--branco);
+  padding: 36px 22px 30px;
+  transition: background 0.35s;
+}
+.mstep:hover { background: var(--musgo); }
+.mstep:hover .ms-num { color: rgba(255,255,255,0.1); }
+.mstep:hover .ms-icon { background: rgba(255,255,255,0.12); }
+.mstep:hover .ms-title,
+.mstep:hover .ms-text { color: var(--branco); }
+.mstep:hover .ms-text { color: rgba(247,244,238,0.65); }
+
+.ms-num {
+  font-family: 'Fraunces', serif;
+  font-size: 54px;
+  font-weight: 900;
+  color: rgba(74,92,58,0.1);
+  line-height: 1;
+  margin-bottom: 16px;
+  transition: color 0.3s;
+}
+.ms-icon {
+  width: 40px; height: 40px;
+  background: var(--musgo-bg);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  margin-bottom: 16px;
+  transition: background 0.3s;
+}
+.ms-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--preto);
+  margin-bottom: 8px;
+  line-height: 1.3;
+  transition: color 0.3s;
+}
+.ms-text {
+  font-size: 12.5px;
+  color: var(--cinza-cl);
+  line-height: 1.75;
+  transition: color 0.3s;
+}
+
+/* ══ RECEITAS ════════════════════════ */
+#receitas {
+  background: var(--branco);
+  padding: 100px 40px;
+}
+
+.rec-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 52px;
+}
+
+.rec-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 14px;
+}
+
+.rec-card {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.rec-card:hover { transform: scale(1.02); }
+
+.rec-img {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rec-card:first-child .rec-img { aspect-ratio: 3/4; }
+.rec-card:not(:first-child) .rec-img { aspect-ratio: 1; }
+
+.rec-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+}
+.rb1 { background: linear-gradient(135deg, #3A2810 0%, #6B4820 100%); }
+.rb2 { background: linear-gradient(135deg, #1A2E14 0%, #3A5A28 100%); }
+.rb3 { background: linear-gradient(135deg, #2E2010 0%, #5A4020 100%); }
+
+.rec-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.18) 55%, transparent 100%);
+}
+.rec-body {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 22px 18px;
+}
+.rec-tag {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--musgo-cl);
+  margin-bottom: 3px;
+}
+.rec-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--branco);
+  line-height: 1.15;
+}
+.rec-card:first-child .rec-title {
+  font-size: 1.75rem;
+}
+.rec-title em { font-style: italic; font-weight: 300; }
+
+.ig-strip {
+  margin-top: 44px;
+  background: var(--musgo-bg);
+  border-radius: 20px;
+  padding: 34px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.ig-strip h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--preto);
+  margin-bottom: 4px;
+}
+.ig-strip p { font-size: 14px; color: var(--cinza-cl); }
+
+.btn-g {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--musgo);
+  color: var(--branco);
+  text-decoration: none;
+  padding: 13px 26px;
+  border-radius: 100px;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.btn-g:hover {
+  background: var(--musgo-cl);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(74,92,58,0.35);
+}
+
+/* ══ DEPOIMENTOS ═════════════════════ */
+#depoimentos {
+  background: var(--preto);
+  padding: 100px 40px;
+}
+
+#depoimentos .s-tag { color: var(--musgo-cl); }
+#depoimentos .s-tag::before { background: var(--musgo-cl); }
+#depoimentos .s-title { color: var(--branco); }
+#depoimentos .s-title em { color: var(--musgo-cl); }
+#depoimentos .s-desc { color: rgba(247,244,238,0.45); }
+
+.depo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.depo-card {
+  background: var(--cinza);
+  border-radius: 20px;
+  padding: 30px 26px;
+  transition: transform 0.3s;
+}
+.depo-card:hover { transform: translateY(-4px); }
+
+.d-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 16px;
+}
+.dstar {
+  width: 13px; height: 13px;
+  background: var(--musgo);
+  clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+}
+
+.d-text {
+  font-size: 14px;
+  color: rgba(247,244,238,0.6);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 22px;
+}
+.d-author { display: flex; align-items: center; gap: 12px; }
+.d-av {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--musgo);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--branco);
+  flex-shrink: 0;
+}
+.d-av.m { background: var(--madeira); }
+.d-name { font-size: 13px; font-weight: 500; color: var(--branco); }
+.d-info { font-size: 11.5px; color: rgba(247,244,238,0.3); }
+
+/* ══ CTA FINAL ═══════════════════════ */
+#cta {
+  background: var(--musgo);
+  padding: 120px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#cta::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.1);
+  top: -200px; right: -200px;
+  pointer-events: none;
+}
+#cta::after {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.07);
+  bottom: -150px; left: -100px;
+  pointer-events: none;
+}
+.cta-in { position: relative; z-index: 1; }
+
+.cta-ey {
+  font-family: 'Caveat', cursive;
+  font-size: 1.45rem;
+  color: rgba(247,244,238,0.7);
+  margin-bottom: 16px;
+  display: block;
+}
+.cta-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 900;
+  color: var(--branco);
+  line-height: 0.95;
+  margin-bottom: 22px;
+  letter-spacing: -1px;
+}
+.cta-title em { font-style: italic; font-weight: 300; }
+.cta-p {
+  font-size: 15.5px;
+  color: rgba(247,244,238,0.68);
+  line-height: 1.7;
+  max-width: 450px;
+  margin: 0 auto 44px;
+}
+
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.btn-w {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--branco);
+  color: var(--musgo);
+  text-decoration: none;
+  padding: 17px 36px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+.btn-w:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
+.btn-gw {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid rgba(247,244,238,0.35);
+  color: var(--branco);
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.btn-gw:hover { border-color: var(--branco); background: rgba(247,244,238,0.1); }
+
+/* ══ FOOTER ══════════════════════════ */
+footer {
+  background: var(--preto);
+  padding: 34px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(74,92,58,0.18);
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.f-brand {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--branco);
+}
+.f-brand em { font-style: italic; font-weight: 300; color: var(--musgo-cl); }
+.f-copy { font-size: 12px; color: rgba(247,244,238,0.28); }
+
+/* ══ ANIMATIONS ══════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══ MOBILE ══════════════════════════ */
+@media (max-width: 768px) {
+  #hero { padding: 88px 24px 70px; }
+
+  .pillars-grid { grid-template-columns: 1fr; }
+  .method-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .depo-grid { grid-template-columns: 1fr; }
+
+  .rec-grid { grid-template-columns: 1fr 1fr; }
+  .rec-card:first-child { grid-column: 1 / -1; }
+  .rec-card:first-child .rec-img { aspect-ratio: 16/9; }
+  .rec-card:first-child .rec-title { font-size: 1.4rem; }
+
+  .sobre-inner { grid-template-columns: 1fr; gap: 50px; }
+  .sobre-photo-outer { width: 350px; margin: 0 auto; }
+  .sobre-deco { display: none; }
+
+  #pilares, #sobre, #metodologia, #receitas, #depoimentos, #cta {
+    padding: 70px 24px;
+  }
+
+  .rec-header { flex-direction: column; align-items: flex-start; }
+  .ig-strip { flex-direction: column; text-align: center; }
+
+  footer { flex-direction: column; text-align: center; padding: 28px 24px; }
+
+  .mstep:nth-child(3), .mstep:nth-child(4) { border-radius: 0 0 0 0; }
+}
+
+@media (max-width: 480px) {
+  .method-grid { grid-template-columns: 1fr; }
+  .rec-grid { grid-template-columns: 1fr; }
+  .rec-card:first-child { grid-column: auto; }
+}
+/* ANIMAÇÕES DE SCROLL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.from-left  { transform: translateX(-40px); }
+  .reveal.from-right { transform: translateX(40px); }
+  .reveal.scale-in   { transform: scale(0.9) translateY(10px); }
+  .reveal.visible    { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-eyebrow">✦ nutricionista clínica ✦</div>
+
+  <div class="hero-photo-wrap">
+    <div class="hero-photo-frame">
+      <img src="perfil2.jpg" alt="Camila Resende" />
+    </div>
+    <span class="photo-tag pt-1">CRN · 12345 ✿</span>
+    <span class="photo-tag pt-2">♡ olá!</span>
+  </div>
+
+  <h1 class="hero-title">
+    <span class="nome">Camila</span><em>Resende</em>
+  </h1>
+
+  <p class="hero-sub">comer bem é um ato de amor próprio 🌿</p>
+
+  <a href="https://wa.me/5519981169792" class="btn-agendar" target="_blank">
+    Agendar Avaliação
+    <span class="arr">→</span>
+  </a>
+
+</section>
+
+
+<!-- ══ PILARES ════════════════════════════════════════ -->
+<section id="pilares">
+  <!-- O título e a descrição surgem subindo suavemente -->
+  <div class="s-tag reveal">como posso te ajudar</div>
+  <h2 class="s-title reveal">Uma nutrição<br><em>que é sua</em></h2>
+  <p class="s-desc reveal">Nada de dieta copiada da internet. Tudo pensado no seu corpo, na sua rotina e nos seus sonhos.</p>
+
+  <div class="pillars-grid">
+    <!-- Os cards podem vir de direções diferentes ou com atrasos -->
+    
+    <!-- Card 1: Vem da esquerda -->
+    <div class="pillar-card reveal from-left" style="transition-delay: 0.1s;">
+      <div class="p-num">01</div>
+      <div class="p-icon">🥗</div>
+      <h3 class="p-title">Alimentação Funcional</h3>
+      <p class="p-text">Planos que respeitam seu gosto e sua correria — porque comer bem não precisa ser sacrifício.</p>
+    </div>
+
+    <!-- Card 2: Apenas sobe (padrão) -->
+    <div class="pillar-card reveal" style="transition-delay: 0.3s;">
+      <div class="p-num">02</div>
+      <div class="p-icon">🌸</div>
+      <h3 class="p-title">Saúde Hormonal</h3>
+      <p class="p-text">Abordagem que considera como os hormônios afetam sua energia, humor e composição corporal.</p>
+    </div>
+
+    <!-- Card 3: Vem da direita -->
+    <div class="pillar-card reveal from-right" style="transition-delay: 0.5s;">
+      <div class="p-num">03</div>
+      <div class="p-icon">♻️</div>
+      <h3 class="p-title">Reeducação Alimentar</h3>
+      <p class="p-text">Sem efeito sanfona. Criamos juntas hábitos que ficam — e que você vai amar ter.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SOBRE MIM ══════════════════════════════════════ -->
+<section id="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-photo-wrap">
+      <div class="sobre-deco"></div>
+      <div class="sobre-photo-outer">
+        <div class="sobre-photo-frame reveal"style="transition-delay: 0.5s;">
+          <img src="perfil3.png" alt="Camila Resende" />
+        </div>
+        <div class="sobre-sticker">
+          <span class="big">+500</span>
+          pacientes
+        </div>
+      </div>
+    </div>
+
+    <div class="sobre-text">
+      <div class="s-tag">quem sou eu</div>
+      <h2 class="s-title">Sua parceira<br>na <em>jornada</em></h2>
+      <p>Sou nutricionista apaixonada por ajudar mulheres a alcançarem seus objetivos com saúde e sem abrir mão do prazer de comer bem.</p>
+      <p>Acredito que cada corpo é único. Com empatia e base científica, construo um caminho real e sustentável para a sua melhor versão.</p>
+
+      <div class="creds">
+        <div class="cred"><div class="cred-dot"></div> Graduada em Nutrição</div>
+        <div class="cred"><div class="cred-dot"></div> Pós em Nutrição Clínica Funcional</div>
+        <div class="cred"><div class="cred-dot"></div> Especialização em Saúde da Mulher</div>
+        <div class="cred"><div class="cred-dot"></div> Atendimento presencial e online</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ METODOLOGIA ════════════════════════════════════ -->
+<section id="metodologia">
+  <div class="s-tag">como funciona</div>
+  <h2 class="s-title">Do primeiro contato<br><em>à transformação</em></h2>
+  <p class="s-desc">Simples, acolhedor e completamente personalizado para você.</p>
+
+  <div class="method-grid">
+    <div class="mstep">
+      <div class="ms-num">01</div>
+      <div class="ms-icon">💬</div>
+      <h3 class="ms-title">Avaliação Inicial</h3>
+      <p class="ms-text">Entendo sua história, hábitos, objetivos e rotina com calma e sem julgamentos.</p>
+    </div>
+    <div class="mstep">
+      <div class="ms-num">02</div>
+      <div class="ms-icon">📋</div>
+      <h3 class="ms-title">Plano Exclusivo</h3>
+      <p class="ms-text">Elaboro seu cardápio personalizado, gostoso e fácil de seguir no dia a dia.</p>
+    </div>
+    <div class="mstep">
+      <div class="ms-num">03</div>
+      <div class="ms-icon">📈</div>
+      <h3 class="ms-title">Acompanhamento</h3>
+      <p class="ms-text">Retornos regulares para ajustes e suporte constante ao longo do caminho.</p>
+    </div>
+    <div class="mstep">
+      <div class="ms-num">04</div>
+      <div class="ms-icon">🌟</div>
+      <h3 class="ms-title">Resultado Duradouro</h3>
+      <p class="ms-text">Autonomia alimentar e uma nova relação com a comida que fica para sempre.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ RECEITAS ═══════════════════════════════════════ -->
+<section id="receitas">
+  <div class="rec-header">
+    <div>
+      <div class="s-tag">conteúdo & receitas</div>
+      <h2 class="s-title">Saúde <em>com sabor</em></h2>
+    </div>
+    <a href="https://www.instagram.com/nutricamilaresende/" class="btn-g" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      @camilaresende  
+    </a>
+  </div>
+
+  <div class="rec-grid">
+    <div class="rec-card">
+      <div class="rec-img">
+        <div class="rec-bg rb1">🍠</div>
+        <div class="rec-fade"></div>
+        <div class="rec-body">
+          <p class="rec-tag">receita · airfryer</p>
+          <h3 class="rec-title">BATATA DOCE<br><em>na airfryer</em></h3>
+        </div>
+      </div>
+    </div>
+    <div class="rec-card">
+      <div class="rec-img">
+        <div class="rec-bg rb2">🌽</div>
+        <div class="rec-fade"></div>
+        <div class="rec-body">
+          <p class="rec-tag">receita fácil</p>
+          <h3 class="rec-title">Cuscuz de<br>preguiçoso</h3>
+        </div>
+      </div>
+    </div>
+    <div class="rec-card">
+      <div class="rec-img">
+        <div class="rec-bg rb3">🥑</div>
+        <div class="rec-fade"></div>
+        <div class="rec-body">
+          <p class="rec-tag">dica nutri</p>
+          <h3 class="rec-title">Prato que<br>sacia de verdade</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ig-strip">
+    <div>
+      <h3>Tem muito mais no Instagram 🌿</h3>
+      <p>Receitas práticas, dicas e bastidores do consultório toda semana.</p>
+    </div>
+    <a href="https://www.instagram.com/nutricamilaresende/" class="btn-g" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Seguir agora
+    </a>
+  </div>
+</section>
+
+
+<!-- ══ DEPOIMENTOS ════════════════════════════════════ -->
+<section id="depoimentos">
+  <div class="s-tag">depoimentos</div>
+  <h2 class="s-title">Quem já <em>transformou</em></h2>
+  <p class="s-desc">Resultados reais de mulheres que escolheram se cuidar de verdade.</p>
+
+  <div class="depo-grid">
+    <div class="depo-card">
+      <div class="d-stars"><div class="dstar"></div><div class="dstar"></div><div class="dstar"></div><div class="dstar"></div><div class="dstar"></div></div>
+      <p class="d-text">"A Camila mudou completamente minha relação com a comida. Aprendi a me alimentar sem culpa e perdi 8kg de forma sustentável."</p>
+      <div class="d-author">
+        <div class="d-av">A</div>
+        <div><div class="d-name">Ana Paula S.</div><div class="d-info">Paciente há 8 meses</div></div>
+      </div>
+    </div>
+    <div class="depo-card">
+      <div class="d-stars"><div class="dstar"></div><div class="dstar"></div><div class="dstar"></div><div class="dstar"></div><div class="dstar"></div></div>
+      <p class="d-text">"Sempre tive problemas hormonais e nunca conseguia emagrecer. Com ela entendi meu corpo e finalmente vi resultados reais."</p>
+      <div class="d-author">
+        <div class="d-av m">M</div>
+        <div><div class="d-name">Mariana L.</div><div class="d-info">Paciente há 1 ano</div></div>
+      </div>
+    </div>
+    <div class="depo-card">
+      <div class="d-stars"><div class="dstar"></div><div class="dstar"></div><div class="dstar"></div><div class="dstar"></div><div class="dstar"></div></div>
+      <p class="d-text">"Atendimento online incrível! Super atenciosa, o plano é fácil de seguir e me sinto apoiada em cada etapa da jornada."</p>
+      <div class="d-author">
+        <div class="d-av">J</div>
+        <div><div class="d-name">Juliana R.</div><div class="d-info">Atendimento online</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ CTA ════════════════════════════════════════════ -->
+<section id="cta">
+  <div class="cta-in">
+    <span class="cta-ey">pronta para começar?</span>
+    <h2 class="cta-title">Sua versão mais<br><em>saudável</em> te espera</h2>
+    <p class="cta-p">Agende sua avaliação e dê o primeiro passo. Sem dieta maluca, sem sofrimento — com ciência e carinho.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/5519981169792" class="btn-w" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a href="https://www.instagram.com/nutricamilaresende/" class="btn-gw" target="_blank">
+        Seguir no Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ═════════════════════════════════════════ -->
+<footer>
+  <div class="f-brand">Camila <em>Resende</em></div>
+  <div class="f-copy">© 2025 · Nutricionista · Todos os direitos reservados</div>
+</footer>
+<script>
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
